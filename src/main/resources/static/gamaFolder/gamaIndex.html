@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page gama</title>
+    <script src="gamaForm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        table{
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 200px;
+            height: 200px;
+
+        }
+        th, td {
+            border: 1px solid;
+        }
+        button {
+            border-radius: 4px;
+            background-color: yellow;
+            color: rgb(0, 0, 0);
+            border: 2px solid #e7e7e7;
+            font-size: 15px;
+            padding: 10px 25px ;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body onload="traerInformacionGama()">
+<center>
+    <h1>formulario gama</h1>
+    <div id="div1"></div>
+    <h2>Agregar gama</h2>
+</center>
+<br><br>
+<center>
+
+    <div>
+        <input type="text" id="name" placeholder="name">
+        <input type="text" id="description" placeholder="description">
+    </div>
+    <br><br>
+    <button onclick="agregarNuevaGama()">Agregar</button><br><br>
+    <button onclick="location.href='../index.html'">Volver</button>
+
+</center>
+
+
+</body>
+</html>
