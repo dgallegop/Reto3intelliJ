@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Message</title>
+    <script src="messageForm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        table{
+            border: 1px solid black;
+            table-layout: fixed;
+
+
+        }
+        th, td {
+            border: 1px solid;
+        }
+        button {
+            border-radius: 4px;
+            background-color: yellow;
+            color: rgb(0, 0, 0);
+            border: 2px solid #e7e7e7;
+            font-size: 15px;
+            padding: 10px 25px ;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body onload="traerInformacionMensaje()">
+<center>
+    <h1>formulario Messages</h1>
+    <div id="div1"></div>
+    <h2>Agregar mensaje</h2>
+</center>
+<br><br>
+<center>
+
+    <div>
+        <textarea type="text" id="messageText" placeholder="message"></textarea>
+        <input type="number" id="idClient" placeholder="idClient">
+        <input type="number" id="idCar" placeholder="idCar">
+
+    </div>
+    <br><br>
+    <button onclick="agregarNuevoMensaje()">Agregar</button><br><br>
+    <button onclick="location.href='../index.html'">Volver</button>
+
+</center>
+
+
+</body>
+</html>
