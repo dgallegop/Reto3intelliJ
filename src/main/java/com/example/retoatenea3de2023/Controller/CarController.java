@@ -33,7 +33,18 @@ public class CarController {
     @ResponseStatus(HttpStatus.CREATED)
     public Car save (@RequestBody Car car){
         return carService.save(car);
+    }
 
+    @PutMapping ("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Car update (@RequestBody Car car){
+        return carService.update(car);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable int id){
+        return carService.delete(id);
 
     }
 
