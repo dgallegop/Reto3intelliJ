@@ -1,6 +1,7 @@
 package com.example.retoatenea3de2023.Controller;
 
 
+import com.example.retoatenea3de2023.Model.Reservation;
 import com.example.retoatenea3de2023.Model.Score;
 import com.example.retoatenea3de2023.Service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,17 @@ public class ScoreController {
     @ResponseStatus(HttpStatus.CREATED)
     public Score save (@RequestBody Score score){
         return scoreService.save(score);
+    }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Score update(@RequestBody Score score) {
+        return scoreService.update(score);
+    }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Boolean delete (@PathVariable int id) {
+        return scoreService.deleteScore(id);
     }
 }

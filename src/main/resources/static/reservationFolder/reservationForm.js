@@ -62,9 +62,9 @@ function agregarNuevaReservacion() {
     var f = new Date();
     let startDay = "";
     if (f.getMonth() < 10) {
-        startDay = f.getFullYear() + "-" + "0" + f.getMonth() + "-" + f.getDate();
+        startDay = f.getFullYear() + "-" + "0" + f.getMonth() + "-" + f.getDate()+"-"+ f.getHours();
     } else {
-        startDay = f.getFullYear() + "-" + f.getMonth() + "-" + f.getDate();
+        startDay = f.getFullYear() + "-" + f.getMonth() + "-" + f.getDate()+"-"+ f.getHours();
     }
 
     const container = document.querySelector("#selectorCarro");

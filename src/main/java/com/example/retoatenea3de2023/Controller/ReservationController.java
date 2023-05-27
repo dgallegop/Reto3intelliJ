@@ -1,6 +1,7 @@
 package com.example.retoatenea3de2023.Controller;
 
 
+import com.example.retoatenea3de2023.Model.Message;
 import com.example.retoatenea3de2023.Model.Reservation;
 import com.example.retoatenea3de2023.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,17 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation save (@RequestBody Reservation reservation){
         return reservationService.save(reservation);
+    }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation update(@RequestBody Reservation reservation) {
+        return reservationService.update(reservation);
+    }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Boolean delete (@PathVariable int id) {
+        return reservationService.deleteReservation(id);
     }
 }

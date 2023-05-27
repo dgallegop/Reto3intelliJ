@@ -1,5 +1,6 @@
 package com.example.retoatenea3de2023.Controller;
 
+import com.example.retoatenea3de2023.Model.Client;
 import com.example.retoatenea3de2023.Model.Gama;
 import com.example.retoatenea3de2023.Service.GamaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,17 @@ public class GamaController {
     @ResponseStatus(HttpStatus.CREATED)
     public Gama save (@RequestBody Gama gama){
         return gamaService.save(gama);
+    }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Gama update(@RequestBody Gama gama) {
+        return gamaService.update(gama);
+    }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Boolean delete (@PathVariable int id) {
+        return gamaService.deleteGama(id);
     }
 }
