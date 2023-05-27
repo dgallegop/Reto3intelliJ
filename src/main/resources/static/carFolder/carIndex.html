@@ -4,6 +4,8 @@
   <title>Page car</title>
   <script src="carForm.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta charset="utf-8">
+
   <style>
     table{
       border: 1px solid black;
@@ -26,7 +28,7 @@
     }
   </style>
 </head>
-<body onload="traerInformacionCarro()">
+<body onload="traerInformacionCarro()" >
   <center>
     <h1>formulario carro</h1>
     <div id="div1"></div>
@@ -40,7 +42,7 @@
       <input type="text" id="brand" placeholder="brand">
       <input type="number" id="year" placeholder="year">
       <input type="text" id="description" placeholder="description">
-      <input type="number" id="idGama" placeholder="idGama">
+      <div id="selectorGama"></div>
     </div>
     <br><br>
     <button onclick="agregarNuevoCarro()">Agregar</button><br><br>

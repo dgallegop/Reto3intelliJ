@@ -33,8 +33,6 @@ public class CarController {
     @ResponseStatus(HttpStatus.CREATED)
     public Car save (@RequestBody Car car){
         return carService.save(car);
-
-
     }
 
 }
