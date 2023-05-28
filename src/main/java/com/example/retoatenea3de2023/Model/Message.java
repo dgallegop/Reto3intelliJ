@@ -1,8 +1,7 @@
 package com.example.retoatenea3de2023.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 @Entity
 @Table(name="message")
 public class Message {

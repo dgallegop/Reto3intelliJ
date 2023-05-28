@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Page</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1>Bienvenido a Nubes 4.0</h1>
+  <div class="container unauthenticated ">
+    para iniciar sesion haz click <a href="/oauth2/authorization/github">Aqui</a>
+  </div>
+
+<div class="container authenticated" style="display: none">
+    Haz sido autenticado: <span id="usuario"></span>
+    <button onclick="location.href='index.html'"> Ir a index </button>
+</div>
+</body>
+
+<script type="text/javascript">
+  $.get("user", function (data) {
+    $("#usuario").html(data.name)
+    $(".unauthenticated").hide();
+    $(".authenticated").show();
+  })
+</script>
+</html>
