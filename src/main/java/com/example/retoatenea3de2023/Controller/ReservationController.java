@@ -1,6 +1,8 @@
 package com.example.retoatenea3de2023.Controller;
 
 
+import com.example.retoatenea3de2023.Model.DTOs.CompletedAndCancelled;
+import com.example.retoatenea3de2023.Model.DTOs.TotalAndClient;
 import com.example.retoatenea3de2023.Model.Reservation;
 import com.example.retoatenea3de2023.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,4 +49,20 @@ public class ReservationController {
         return reservationService.deleteReservation(id);
 
     }
+
+    @GetMapping ("/report-dates/{fecha1}/{fecha2}")
+    public List<Reservation> getReservationsBetweenDatesReport(@PathVariable ("fecha1") String fecha1, @PathVariable ("fecha2") String fecha2){
+        return reservationService.getReservationsBetweenDatesReport(fecha1,fecha2);
+    }
+
+    @GetMapping("/report-status")
+    public CompletedAndCancelled getReservationsStatusReport(){
+        return reservationService.getReservationsStatusReport();
+    }
+
+    @GetMapping("/report-clients")
+    public List<TotalAndClient> getTopClientsReport(){
+        return reservationService.getTopClientsReport();
+    }
+
 }

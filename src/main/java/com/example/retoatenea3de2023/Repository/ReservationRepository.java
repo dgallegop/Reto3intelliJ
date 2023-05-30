@@ -6,7 +6,9 @@ import com.example.retoatenea3de2023.Repository.CRUD.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Repository
@@ -31,5 +33,15 @@ public class ReservationRepository {
         reservationCrudRepository.delete(reservation);
     }
 
+    public List<Reservation> getReservationsBetweenDates(Date fechaA, Date fechaB){
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA,fechaB);
+    }
 
+    public List<Reservation> getReservationsByStatus(String status){
+        return reservationCrudRepository.findAllByStatus(status);
+    }
+
+    public List<Object[]> getTotalReservationsByClient(){
+        return reservationCrudRepository.getTotalReservationsByClient();
+    }
 }
