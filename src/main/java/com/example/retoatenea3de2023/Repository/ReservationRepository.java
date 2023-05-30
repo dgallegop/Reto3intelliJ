@@ -8,10 +8,7 @@ import com.example.retoatenea3de2023.Repository.CRUD.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-<<<<<<< HEAD
-=======
-import java.util.ArrayList;
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
+
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -24,50 +21,36 @@ public class ReservationRepository {
     private ReservationCrudRepository reservationCrudRepository;
 
     public List<Reservation> findAll() {
-        return(List<Reservation>) reservationCrudRepository.findAll();
+        return (List<Reservation>) reservationCrudRepository.findAll();
     }
 
-    public Optional<Reservation> getReservation(int id){
+    public Optional<Reservation> getReservation(int id) {
         return reservationCrudRepository.findById(id);
     }
 
-    public Reservation save (Reservation reservation){
+    public Reservation save(Reservation reservation) {
         return reservationCrudRepository.save(reservation);
     }
 
-    public void delete (Reservation reservation){
+    public void delete(Reservation reservation) {
         reservationCrudRepository.delete(reservation);
     }
 
-<<<<<<< HEAD
-    public List<Reservation> getReservationsBetweenDates(Date fechaA, Date fechaB){
-        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA,fechaB);
-    }
-=======
+
     //reto 5
 
-    public List<Reservation> getReservationsBetweenDates (Date fechaA, Date fechaB){
-        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA,fechaB);
+    public List<Reservation> getReservationsBetweenDates(Date fechaA, Date fechaB) {
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA, fechaB);
 
     }
 
-    public List<Reservation> getReservationsByStatus(String status){
+    public List<Reservation> getReservationsByStatus(String status) {
         return reservationCrudRepository.findAllByStatus(status);
 
     }
 
-    public List<Object[]> getTotalReservationsByClient(){
+    public List<Object[]> getTotalReservationsByClient() {
         return reservationCrudRepository.getTotalReservationsByClient();
 
-    }
-
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
-
-    public List<Reservation> getReservationsByStatus(String status){
-        return reservationCrudRepository.findAllByStatus(status);
-    }
-
-    public List<Object[]> getTotalReservationsByClient(){
-        return reservationCrudRepository.getTotalReservationsByClient();
     }
 }

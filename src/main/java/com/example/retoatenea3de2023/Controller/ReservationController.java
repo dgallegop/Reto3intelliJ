@@ -51,20 +51,16 @@ public class ReservationController {
 
     }
 
-<<<<<<< HEAD
-    @GetMapping ("/report-dates/{fecha1}/{fecha2}")
-    public List<Reservation> getReservationsBetweenDatesReport(@PathVariable ("fecha1") String fecha1, @PathVariable ("fecha2") String fecha2){
-=======
     @GetMapping("/report-dates/{fecha1}/{fecha2}")
     public List<Reservation> getReservationsBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable ("fecha2") String fecha2){
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
+
         return reservationService.getReservationsBetweenDatesReport(fecha1,fecha2);
     }
 
     @GetMapping("/report-status")
     public CompletedAndCancelled getReservationsStatusReport(){
         return reservationService.getReservationsStatusReport();
-<<<<<<< HEAD
+
     }
 
     @GetMapping("/report-clients")
@@ -72,13 +68,6 @@ public class ReservationController {
         return reservationService.getTopClientsReport();
     }
 
-=======
 
-    }
 
-    @GetMapping("/report-clients")
-    public List<TotalAndClient> getTomClientsReport(){
-        return reservationService.getTopClientsReport();
-    }
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
 }

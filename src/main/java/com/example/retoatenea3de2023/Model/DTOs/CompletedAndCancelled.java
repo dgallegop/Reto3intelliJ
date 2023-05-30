@@ -1,10 +1,7 @@
 package com.example.retoatenea3de2023.Model.DTOs;
 
 public class CompletedAndCancelled {
-<<<<<<< HEAD
 
-=======
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
     private Long completed;
     private Long cancelled;
 

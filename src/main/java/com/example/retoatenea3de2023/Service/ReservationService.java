@@ -112,9 +112,5 @@ public class ReservationService {
         }
         return respuesta;
     }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
 }
