@@ -1,11 +1,17 @@
 package com.example.retoatenea3de2023.Repository;
 
 
+import com.example.retoatenea3de2023.Model.Client;
+import com.example.retoatenea3de2023.Model.DTOs.TotalAndClient;
 import com.example.retoatenea3de2023.Model.Reservation;
 import com.example.retoatenea3de2023.Repository.CRUD.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+>>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -33,9 +39,29 @@ public class ReservationRepository {
         reservationCrudRepository.delete(reservation);
     }
 
+<<<<<<< HEAD
     public List<Reservation> getReservationsBetweenDates(Date fechaA, Date fechaB){
         return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA,fechaB);
     }
+=======
+    //reto 5
+
+    public List<Reservation> getReservationsBetweenDates (Date fechaA, Date fechaB){
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA,fechaB);
+
+    }
+
+    public List<Reservation> getReservationsByStatus(String status){
+        return reservationCrudRepository.findAllByStatus(status);
+
+    }
+
+    public List<Object[]> getTotalReservationsByClient(){
+        return reservationCrudRepository.getTotalReservationsByClient();
+
+    }
+
+>>>>>>> 64779f416f2450cbd7588db39065427b6f4e8e59
 
     public List<Reservation> getReservationsByStatus(String status){
         return reservationCrudRepository.findAllByStatus(status);
