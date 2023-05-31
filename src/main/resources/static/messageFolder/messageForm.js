@@ -1,6 +1,6 @@
 function traerInformacionMensaje(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Message/all",
+        url:"http://localhost:8080/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -41,7 +41,7 @@ function agregarNuevoMensaje() {
     console.log(dataToSent);
     //{"messageText":"Me gusta.","client":{"idClient":1},"car":{"idCar":1}}
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Message/save",
+        url:"http://localhost:8080/api/Message/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",

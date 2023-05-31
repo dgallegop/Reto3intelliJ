@@ -1,6 +1,6 @@
 function traerInformacionScore(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Score/all",
+        url:"http://localhost:8080/api/Score/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -41,7 +41,7 @@ function agregarNuevaScore() {
     console.log(dataToSent);
     //{"messageText":"luego2","starts":5, "reservation":{"idReservation":1}}
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Score/save",
+        url:"http://localhost:8080/api/Score/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",

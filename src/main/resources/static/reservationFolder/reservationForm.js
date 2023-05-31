@@ -1,6 +1,6 @@
 function traerInformacionReservation(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Reservation/all",
+        url:"http://localhost:8080/api/Reservation/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -42,7 +42,7 @@ function agregarNuevaReservacion() {
     console.log(dataToSent);
     //{"startDate":"2020-12-20","devolutionDate":"2020-12-20","client":{"idClient":1},"car":{"idCar":1}}
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Reservation/save",
+        url:"http://localhost:8080/api/Reservation/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",

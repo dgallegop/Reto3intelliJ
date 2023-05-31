@@ -1,6 +1,6 @@
 function traerInformacionGama(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Gama/all",
+        url:"http://localhost:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -37,7 +37,7 @@ function agregarNuevaGama() {
     };
     let dataToSent = JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Gama/save",
+        url:"http://localhost:8080/api/Gama/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",

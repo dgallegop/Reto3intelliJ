@@ -1,6 +1,6 @@
 function traerInformacionCliente(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Client/all",
+        url:"http://localhost:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -41,7 +41,7 @@ function agregarNuevoCliente() {
     let dataToSent  = JSON.stringify(myData);
     console.log(dataToSent);
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Client/save",
+        url:"http://localhost:8080/api/Client/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",

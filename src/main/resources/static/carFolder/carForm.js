@@ -1,6 +1,6 @@
 function traerInformacionCarro(){
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Car/all",
+        url:"http://localhost:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -44,7 +44,7 @@ function agregarNuevoCarro() {
     let dataToSent = JSON.stringify(myData);
     console.log(dataToSent);
     $.ajax({
-        url:"http://129.151.104.11:8080/api/Car/save",
+        url:"http://localhost:8080/api/Car/save",
         type:"POST",
         data: dataToSent,
         contentType: "application/json",
