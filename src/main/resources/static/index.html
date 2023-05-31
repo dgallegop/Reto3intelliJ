@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <title>Reto 4</title>
+    <title>Reto 4.8</title>
     <style>
         table{
             border: 1px solid black;
@@ -20,20 +20,28 @@
 </head>
 <body>
 
-<h1>Reto 4</h1>
+<div class="bg-image"
+     style=" font-family: fantasy; font-weight: lighter ;color: azure; background-image: url('https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1800&t=st=1685419906~exp=1685420506~hmac=263bc94c6a6720e26c99f0d41d0e9e3081594f66e3a9cbb08bace912fb5a1d60');
+     height: 140vh;">
+    <br>
+<h1 style="display: block; text-align: center">Reto 4.8</h1>
 <br>
 <br>
-<div class="container unauthenticated">
+<div style="width: 80%; font: italic; color: azure; text-align: center;margin: auto;padding: 3%;">
+    <h1 class="display-2 fw-bold"> Reto 5 front end </h1>
+
+            <p class="fs-1 container unauthenticated">
     <table>
     <tr><th>debes iniciar sesion, oprime el siguiente <a href="/oauth2/authorization/github">boton</a></th></tr>
     </table>
-</div>
-<div class="container authenticated" style="display: none">
-    has sido autenticado: <span id="usuario"></span>
+    </p>
+
+    <p class="fs-2 container authenticated" style="display: none">
+    has sido autenticado: <span id="usuario"></span><br>
     <button onclick="location.href='homePage.html';">Continuar </button>
-
+    </p>
 </div>
-
+</div>
 </body>
 <script type="text/javascript">
     $.get("/user",function (data){

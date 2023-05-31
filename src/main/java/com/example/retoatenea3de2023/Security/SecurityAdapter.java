@@ -14,7 +14,7 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure (HttpSecurity http) throws Exception{
         http.authorizeRequests(
-                a -> a.antMatchers("/", "/error", "/webjars/**", "/api/**" ).permitAll().anyRequest().authenticated()
+                a -> a.antMatchers("/", "/error", "/webjars/**", "/api/**" ,"homePage.html" ).permitAll().anyRequest().authenticated()
             ).exceptionHandling(
                     e -> e.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.FORBIDDEN)) //CODIGO 403
             ).oauth2Login().defaultSuccessUrl("/homePage.html" , true);

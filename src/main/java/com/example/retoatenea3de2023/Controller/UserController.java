@@ -12,7 +12,7 @@ import java.util.Map;
 public class UserController {
     @GetMapping("/user")
     public Map<String, Object> user (@AuthenticationPrincipal OAuth2User principal){
-        System.out.println("Datos de usuario\n"+principal.getAttributes());
+        System.out.println("Datos_de_usuario\n"+principal.getAttributes());
         return Collections.singletonMap("name", principal.getAttribute("name"));
     }
 }
