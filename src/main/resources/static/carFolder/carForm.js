@@ -12,20 +12,7 @@ function traerInformacionCarro(){
         }
     });
 }
-function traerInformacionGama(){
-    $.ajax({
-        url:"http://localhost:8080/api/Gama/all",
-        type:"GET",
-        datatype:"JSON",
-        success:function(respuesta){
-            //Acá se puede validar la respuesta
-            console.log(respuesta);
-            $("#selectorGama").empty();
 
-            creacionSelector(respuesta);
-        }
-    });
-}
 function imprimirInformacionCarro(items) {
     var myTable = "<table>";
     myTable += "<tr>";
@@ -41,26 +28,23 @@ function imprimirInformacionCarro(items) {
     $("#div1").append(myTable);
 }
 
-function creacionSelector(items) {
-    var mySelect = "<select name='Gamas'>";
-    mySelect += "<optgroup label= GamasDisponibles>";
-    for(i=0 ; i < items.length; i++) {
-    mySelect += "<option value='"+items[i].idGama+"'>"+items[i].name+"</option>";
-   }
-    mySelect += "</optgroup>";
-    mySelect += "</select>";
-    $("#selectorGama").append(mySelect);
-}
+
 
 function crearDetalle(idSus) {
+
     localStorage.setItem("id",idSus);
-    location.href="carDetailFolder/carDetailIndex.html";
+    localStorage.setItem("tipo","Car");
+    var array = ["idCar","name","brand","year","description","gama"]
+    localStorage.setItem("nombres", JSON.stringify(array));
+    localStorage.setItem("nombreID", "idCar")
+    localStorage.setItem("urlRegresar", "../carFolder/carIndex.html");
+    location.href="../detailFolder/detail.html";
+
 }
 
 function agregarNuevoCarro() {
     const container = document.querySelector("#selectorGama");
     const valueSelector = container.firstElementChild.value;
-    console.log(valueSelector);
     let myData = {
         name: $("#name").val(),
         brand: $("#brand").val(),

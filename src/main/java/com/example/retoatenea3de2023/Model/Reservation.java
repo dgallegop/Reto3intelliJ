@@ -12,8 +12,8 @@ public class Reservation {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idReservation;
 
-    private Date startDate;
-    private Date devolutionDate;
+    private String startDate;
+    private String devolutionDate;
     private String status ="created";
 
     //car
@@ -40,19 +40,19 @@ public class Reservation {
         this.idReservation = idReservation;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getDevolutionDate() {
+    public String getDevolutionDate() {
         return devolutionDate;
     }
 
-    public void setDevolutionDate(Date devolutionDate) {
+    public void setDevolutionDate(String devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
 

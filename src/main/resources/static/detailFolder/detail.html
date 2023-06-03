@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page detail client</title>
+    <script src="script.js"></script>
+    <script src="../Selector/SelectorScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        table{
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 100%;
+            height:100px;
+
+        }
+        th, td {
+            border: 1px solid;
+            text-align: center;
+        }
+        button {
+            border-radius: 4px;
+            background-color: yellow;
+            color: black;
+            border: 2px solid #e7e7e7;
+            font-size: 17px;
+            text-align: center;
+            width: 120px;
+
+        }
+    </style>
+</head>
+<body onload="mostrarDetalle()">
+
+<h1>formulario detalles</h1>
+<center>
+    <div id="div1"></div>
+</center><br><br>
+<h2>Modificar detalle</h2>
+<div id="div2"></div><br><br>
+<center>
+    <button onclick="crearJson()">Actualizar</button><br><br>
+    <button onclick="volver()">Volver</button>
+</center>
+
+</body>
+</html>

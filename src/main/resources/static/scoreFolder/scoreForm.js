@@ -27,8 +27,15 @@ function imprimirInformacionScore(items) {
 }
 
 function crearDetalle(idSus) {
+
     localStorage.setItem("id",idSus);
-    location.href="../DETAILMESSAGEFOLDER/detailmessageindex.html";
+    localStorage.setItem("tipo","Score");
+    var array = ["idScore","messageText","starts"]
+    localStorage.setItem("nombres", JSON.stringify(array));
+    localStorage.setItem("nombreID", "idScore")
+    localStorage.setItem("urlRegresar", "../scoreFolder/scoreIndex.html");
+    location.href="../detailFolder/detail.html";
+
 }
 
 function agregarNuevaScore() {

@@ -27,7 +27,15 @@ function imprimirInformacionGama(items) {
 }
 
 function crearDetalle(idSus) {
+
     localStorage.setItem("id",idSus);
+    localStorage.setItem("tipo","Gama");
+    var array = ["idGama","name","description"]
+    localStorage.setItem("nombres", JSON.stringify(array));
+    localStorage.setItem("nombreID", "idGama")
+    localStorage.setItem("urlRegresar", "../gamaFolder/gamaIndex.html");
+    location.href="../detailFolder/detail.html";
+
 }
 
 function agregarNuevaGama() {

@@ -42,8 +42,15 @@ function imprimirInformacionMensaje(items) {
 }
 
 function crearDetalle(idSus) {
+
     localStorage.setItem("id",idSus);
-    location.href="../DETAILMESSAGEFOLDER/detailmessageindex.html";
+    localStorage.setItem("tipo","Message");
+    var array = ["idMessage","messageText"]
+    localStorage.setItem("nombres", JSON.stringify(array));
+    localStorage.setItem("nombreID", "idMessage")
+    localStorage.setItem("urlRegresar", "../messageFolder/messageIndex.html");
+    location.href="../detailFolder/detail.html";
+
 }
 
 function creacionSelector(items) {

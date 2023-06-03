@@ -42,8 +42,15 @@ function imprimirInformacionReservation(items) {
 }
 
 function crearDetalle(idSus) {
+
     localStorage.setItem("id",idSus);
-    location.href="../DETAILMESSAGEFOLDER/detailmessageindex.html";
+    localStorage.setItem("tipo","Reservation");
+    var array = ["idReservation","startDate","devolutionDate","status"]
+    localStorage.setItem("nombres", JSON.stringify(array));
+    localStorage.setItem("nombreID", "idReservation")
+    localStorage.setItem("urlRegresar", "../reservationFolder/reservationIndex.html");
+    location.href="../detailFolder/detail.html";
+
 }
 
 function creacionSelector(items) {
@@ -62,20 +69,21 @@ function agregarNuevaReservacion() {
     var f = new Date();
     let startDay = "";
     if (f.getMonth() < 10) {
-        startDay = f.getFullYear() + "-" + "0" + f.getMonth() + "-" + f.getDate()+"-"+ f.getHours();
+        startDay = f.getFullYear() + "-" + "0" + f.getUTCMonth() + "-" + f.getDay();
     } else {
-        startDay = f.getFullYear() + "-" + f.getMonth() + "-" + f.getDate()+"-"+ f.getHours();
+        startDay = f.getFullYear() + "-" + f.getMonth() + "-" + f.getDay();
     }
 
     const container = document.querySelector("#selectorCarro");
     const valueSelector = container.firstElementChild.value;
     console.log(valueSelector);
-
+    let parsear = parseInt(valueSelector);
+    let parsearCliente = parseInt($("#idClient").val());
     let myData = {
         startDate: startDay,
         devolutionDate: $("#devolutionDate").val(),
-        client:{idClient:$("#idClient").val()},
-        car:{idCar:valueSelector}
+        client:{idClient:parsearCliente},
+        car:{idCar:parsear}
     };
     let dataToSent = JSON.stringify(myData);
     console.log(dataToSent);
