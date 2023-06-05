@@ -66,12 +66,14 @@ function creacionSelector(items) {
 
 
 function agregarNuevaReservacion() {
-    var f = new Date();
+    const tiempoTranscurrido = Date.now();
+    var f = new Date(tiempoTranscurrido);
+    const month = f.getMonth() + 1
     let startDay = "";
     if (f.getMonth() < 10) {
-        startDay = f.getFullYear() + "-" + "0" + f.getUTCMonth() + "-" + f.getDay();
+        startDay = f.getFullYear() + "-" +"0"+ month + "-" + f.getDate();
     } else {
-        startDay = f.getFullYear() + "-" + f.getMonth() + "-" + f.getDay();
+        startDay = f.getFullYear() + "-" + month + "-" + f.getDate();
     }
 
     const container = document.querySelector("#selectorCarro");

@@ -88,7 +88,7 @@ function crearJson() {
             let myData = {};
             myData[nombre] = id;
             for (const x in respuesta) {
-                if(x != "messages"&& x != "reservations" && x != nombre && x != "gama" && x != "score" && x != "status" ) {
+                if(x != "messages"&& x != "reservations" && x != nombre && x != "gama" ) {
                     var valorObtenido = x;
                     myData[valorObtenido] = $("#"+x+"").val()
                 }
@@ -130,7 +130,7 @@ function formatoActualizar(items,Nombres,id) {
     myTable += "<tr>";
     myTable += "<td>"+id+"</td>";
     for (const x in items) {
-        if(x != "messages"&& x != "reservations" && x != nombre && x != "gama" && x != "cars" && x != "car" && x != "client" && x != "score"&& x != "reservation") {
+        if(x != "messages"&& x != "reservations" && x != nombre && x != "gama" && x != "cars" && x != "car" && x != "client" && x != "score"&& x != "reservation" && x != "startDate" && x != "devolutionDate") {
             if(isString(items[x])) {
                 console.log("Los strings son "+items[x]);
                 myTable += "<td> <input type="+'text'+" id="+x+" placeholder="+items[x]+"> </td>"
@@ -140,6 +140,10 @@ function formatoActualizar(items,Nombres,id) {
             }
         }else if (x == "gama") {
             myTable += "<td>"+items[x].name+"</td>";
+        } else if (x == "startDate") {
+            myTable += "<td>"+items[x]+"</td>";
+        } else if (x == "devolutionDate") {
+            myTable += "<td> <input type="+'date'+" id="+x+" placeholder="+items[x]+"> </td>"
         }
     }
 
